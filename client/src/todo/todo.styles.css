@@ -1,0 +1,23 @@
+.todo{
+    border: 5px solid black;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    width:700px;
+    margin-left: 30%;
+    margin-bottom: 10px;
+}
+
+button{
+    cursor: pointer;
+    margin-left:35px;
+}
+
+.text-area{
+    margin-top: 10px;
+}
+
+.class{
+    display: flex;
+    flex-direction: column;
+}
