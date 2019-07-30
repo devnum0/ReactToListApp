@@ -1,13 +1,13 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import './App.css';
 import TodoDashBoard from './todo-dashboard/TodoDashBoard';
 
 export default function App() {
   return (
-    <div>
+    <Fragment>
         <div className="App">
-        <TodoDashBoard/>
-    </div>
-    </div>
+          <TodoDashBoard/>
+        </div>
+    </Fragment>
   )
 }

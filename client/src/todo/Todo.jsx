@@ -47,6 +47,7 @@ export default class Todo extends Component {
     render() {
         const {name,description,id } = this.props;
          const status = this.state.statusClicked === false ? 'IN PROGRESS' : "COMPLETED";
+         const color = status === 'IN PROGRESS'? 'red': 'green';
         return (
             <div className="todo">
             <h1>{name}</h1>
@@ -61,8 +62,8 @@ export default class Todo extends Component {
                         />  
             </div>
             <div className="class">
-                <button onClick={() =>this.removeTodo({id,name})}>Remove Todo</button>
-                <button onClick={() =>this.onStatusChange({id,status})}>{status}</button>
+                <button style={{color:'white',backgroundColor:'black'}} onClick={() =>this.removeTodo({id,name})}>Remove Todo</button>
+                <button style={{color:`${color}`}} onClick={() =>this.onStatusChange({id,status})}>{status}</button>
             </div>
         </div>
         )

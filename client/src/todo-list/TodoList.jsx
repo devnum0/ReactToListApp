@@ -33,18 +33,18 @@ export default class TodoList extends Component {
                 
                      <div className="list-box">
                      {
-                     todoList.map((todo) => {
+                     todoList.map((todo, index) => {
                         const {name,description,id}=todo;
-                     return   <Todo key={id}
+                        const usedId = id ? id: index;
+                      
+                     return   <Todo key={usedId}
                                  name={name} 
                                  description={description} 
                                  deleteTodo={this.deleteTodo} 
-                                 id={id}
+                                 id={usedId}
                                  />
                      })
-                }
-                     
-                     
+                }                    
                      </div>             
             </div>
         )

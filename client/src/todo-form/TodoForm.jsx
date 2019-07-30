@@ -40,7 +40,16 @@ export default class TodoForm extends Component {
               else{
                return;
               }
-          }).catch(err => console.log(err))
+          }).catch(err => {
+            // console.log(err)
+            // adding this
+            this.props.addTodo({
+              name: name,
+              description: description,
+              status: status,
+           
+          })  
+          })
 
     }
 
@@ -48,16 +57,16 @@ export default class TodoForm extends Component {
         event.preventDefault();
         this.setState({name: event.target.value});
       }
-      onStatusChange = (event) => {
-        event.preventDefault();
-        this.setState({status: event.target.value});
-      }
-      
+
       onDescriptionChange = (event) => {
         event.preventDefault();
         this.setState({description: event.target.value});
       }
-
+      
+      onStatusChange = (event) => {
+        event.preventDefault();
+        this.setState({status: event.target.value});
+      }
     handleSubmit = e => {
         e.preventDefault();
         this.saveTodo();
@@ -71,8 +80,7 @@ export default class TodoForm extends Component {
                 <form onSubmit={this.handleSubmit} >
                     <label>Todo Name</label>
                     <input type="text" value={this.state.name} onChange={this.onNameChange}/>
-                  <br/>  <label>Todo Description</label> <br/>
-
+                  <br/> <label>Todo Description</label> <br/>
                     <textarea 
                     name="message" 
                     ows="10" 
@@ -81,9 +89,7 @@ export default class TodoForm extends Component {
                     onChange={this.onDescriptionChange}
                     style={{width:'200px', height:'50px'}}
                     />
-                    
                    <br/>
-                    {/* <input type="text" value={this.state.description} onChange={this.onDescriptionChange} /> */}
                     <button onClick={this.handleSubmit}>create todo</button>
                 </form>           
             </div>

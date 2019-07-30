@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{Fragment} from 'react';
 import TodoList from '../todo-list/TodoList';
 
 export default function TodoDashBoard() {
     return (
-        <div>
+        <Fragment>
             <TodoList/>
-        </div>
+        </Fragment>
     )
 }
 
